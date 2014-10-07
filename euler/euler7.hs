@@ -3,10 +3,21 @@
 -- What is the 10 001st prime number?
 
 main = do
-    print(get10001stPrime)
+    print(getPrimeN 5)
 
-get10001stPrime =
-    (2 : 3 : [x | x <- [4..], odd x && all (cannotDivide x) [3..((isqrt x))]]) !! 10000
+
+bla =
+    [x | fs <- [2..10]]
+    where
+        fs = []
+
+getPrimeN n =
+    (2 : [x | x <- [3, 5..], isPrime x]) !! (n - 1)
+
+isPrime x =
+    all (cannotDivide x) [squared, (squared - 1)..2]
+    where
+        squared = isqrt x
 
 cannotDivide x y =
     x `mod` y /= 0
