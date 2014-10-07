@@ -3,13 +3,7 @@
 -- What is the 10 001st prime number?
 
 main = do
-    print(getPrimeN 5)
-
-
-bla =
-    [x | fs <- [2..10]]
-    where
-        fs = []
+    print(getPrimeN 10001)
 
 getPrimeN n =
     (2 : [x | x <- [3, 5..], isPrime x]) !! (n - 1)
